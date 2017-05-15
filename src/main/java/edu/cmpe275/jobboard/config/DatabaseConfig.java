@@ -94,7 +94,7 @@ public class DatabaseConfig {
 		return new PersistenceExceptionTranslationPostProcessor();
 	}
 
-	 @Bean
+	 /*@Bean
 	  public EmbeddedServletContainerFactory servletContainer() {
 	    TomcatEmbeddedServletContainerFactory tomcat = new TomcatEmbeddedServletContainerFactory() {
 	        @Override
@@ -120,7 +120,7 @@ public class DatabaseConfig {
 	    connector.setRedirectPort(8443);
 	    
 	    return connector;
-	  }
+	  }*/
 
 	// ------------------------
 	// PRIVATE FIELDS

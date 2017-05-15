@@ -3,7 +3,15 @@
  */
 package edu.cmpe275.jobboard.entity;
 
+import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -14,11 +22,27 @@ import javax.persistence.Table;
 @Table(name = "jobapplication")
 public class JobApplication {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Basic(optional = false)
+	@Column(name = "appId", unique = true, nullable = false)
 	private int appId;
-	private JobPosting jobPosting;
-	private JobSeeker jobSeeker;
+	
+	@ManyToOne
+	@JoinColumn(name="jobId")
+	private JobPosting jobposting;
+	
+	@ManyToOne
+	@JoinColumn(name="jobSeekerId")
+	private JobSeeker jobseeker;
+	
+	@Column(name="resume")
 	private boolean resume;
+	
+	@Column(name="resumePath")
 	private String resumePath;
+	
+	@Column(name="state")
 	private int state;
 
 	/**
@@ -39,28 +63,28 @@ public class JobApplication {
 	 * @return Job Posting
 	 */
 	public JobPosting getJobPosting() {
-		return jobPosting;
+		return jobposting;
 	}
 
 	/**
 	 * @param jobPosting
 	 */
 	public void setJobPosting(JobPosting jobPosting) {
-		this.jobPosting = jobPosting;
+		this.jobposting = jobPosting;
 	}
 
 	/**
 	 * @return JobSeeker
 	 */
 	public JobSeeker getJobSeeker() {
-		return jobSeeker;
+		return jobseeker;
 	}
 
 	/**
 	 * @param jobSeeker
 	 */
 	public void setJobSeeker(JobSeeker jobSeeker) {
-		this.jobSeeker = jobSeeker;
+		this.jobseeker = jobSeeker;
 	}
 
 	/**

@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -14,7 +15,7 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name = "job")
+@Table(name = "jobposting")
 public class JobPosting {
 
 	@Id
@@ -22,18 +23,26 @@ public class JobPosting {
 	@Basic(optional = false)
 	@Column(name = "jobId", unique = true, nullable = false)
 	private String jobId;
+	
+	@ManyToOne
 	@JoinColumn(name = "companyId")
 	private Company company;
+	
 	@Column(name = "state")
 	private int State;
+	
 	@Column(name = "title")
 	private String Title;
+	
 	@Column(name = "description")
 	private String Description;
+	
 	@Column(name = "responsibilities")
 	private String Responsibilties;
+	
 	@Column(name = "location")
 	private String Location;
+	
 	@Column(name = "salary")
 	private String Salary;
 

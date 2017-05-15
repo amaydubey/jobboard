@@ -3,7 +3,12 @@
  */
 package edu.cmpe275.jobboard.entity;
 
+import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
@@ -14,14 +19,38 @@ import javax.persistence.Table;
 @Table(name="jobseeker")
 public class JobSeeker {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Basic(optional = false)
+	@Column(name = "jobSeekerId", unique = true, nullable = false)
 	private int jobseekerId;
+	
+	@Column(name="firstName")
 	private String firstName;
+	
+	@Column(name="lastName")
 	private String lastName;
+	
+	@Column(name="emailId")
 	private String emailId;
+	
+	@Column(name="password")
 	private String password;
+	
+	@Column(name="workEx")
 	private int workEx;
+	
+	@Column(name="highestEducation")
 	private int highestEducation;
+	
+	@Column(name="skills")
 	private String skills;
+	
+	@Column(name="verified")
+	private boolean verified;
+	
+	@Column(name="verificationCode")
+	private int verificationCode;
 	
 	/**
 	 * @return JobSeeker Id
@@ -118,6 +147,30 @@ public class JobSeeker {
 	 */
 	public void setSkills(String skills) {
 		this.skills = skills;
+	}
+	/**
+	 * @return true if the user has been verified using the verification code
+	 */
+	public boolean isVerified() {
+		return verified;
+	}
+	/**
+	 * @param verified
+	 */
+	public void setVerified(boolean verified) {
+		this.verified = verified;
+	}
+	/**
+	 * @return verificationCode
+	 */
+	public int getVerificationCode() {
+		return verificationCode;
+	}
+	/**
+	 * @param verificationCode 
+	 */
+	public void setVerificationCode(int verificationCode) {
+		this.verificationCode = verificationCode;
 	}
 
 }
