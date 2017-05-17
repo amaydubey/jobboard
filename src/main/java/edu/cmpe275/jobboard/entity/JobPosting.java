@@ -22,7 +22,7 @@ public class JobPosting {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Basic(optional = false)
 	@Column(name = "jobId", unique = true, nullable = false)
-	private String jobId;
+	private int jobId;
 	
 	@ManyToOne
 	@JoinColumn(name = "companyId")
@@ -54,14 +54,14 @@ public class JobPosting {
 	/**
 	 * @return Jid of the job
 	 */
-	public String getJobId() {
+	public int getJobId() {
 		return jobId;
 	}
 
 	/**
 	 * @param jobId
 	 */
-	public void setjobId(String jobId) {
+	public void setjobId(int jobId) {
 		this.jobId = jobId;
 	}
 
