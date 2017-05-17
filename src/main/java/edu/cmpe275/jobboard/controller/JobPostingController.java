@@ -85,7 +85,7 @@ public class JobPostingController {
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<String> deleteJobPosting(@PathVariable("id") String id) {
+	public ResponseEntity<String> deleteJobPosting(@PathVariable("id") int id) {
 		
 		Map<String, Object> message = new HashMap<String, Object>();
 		Map<String, Object> response = new HashMap<String, Object>();

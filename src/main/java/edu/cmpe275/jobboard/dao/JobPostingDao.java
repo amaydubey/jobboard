@@ -16,13 +16,13 @@ public interface JobPostingDao {
 	 * @param id
 	 * @return Requested JobPosting
 	 */
-	JobPosting getJobPosting(String id);
+	JobPosting getJobPosting(int id);
 
 	/**
 	 * @param id
 	 * @return True if JobPosting is Deleted
 	 */
-	boolean deleteJobPosting(String id);
+	boolean deleteJobPosting(int id);
 
 	/**
 	 * @param job

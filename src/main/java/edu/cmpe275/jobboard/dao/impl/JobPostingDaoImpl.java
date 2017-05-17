@@ -30,7 +30,7 @@ public class JobPostingDaoImpl implements JobPostingDao {
 	}
 
 	@Override
-	public JobPosting getJobPosting(String id) {
+	public JobPosting getJobPosting(int id) {
 		JobPosting j = null;
 		
 			j = entityManager.find(JobPosting.class, id);
@@ -39,7 +39,7 @@ public class JobPostingDaoImpl implements JobPostingDao {
 	}
 
 	@Override
-	public boolean deleteJobPosting(String id) {
+	public boolean deleteJobPosting(int id) {
 		JobPosting p = getJobPosting(id);
 		if(p!=null){
 			entityManager.remove(p);
