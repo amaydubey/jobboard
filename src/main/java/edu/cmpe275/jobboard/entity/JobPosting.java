@@ -168,5 +168,9 @@ public class JobPosting {
 	public void setSalary(String Salary) {
 		this.Salary = Salary;
 	}
+	
+	
+	
+	
 
 }
