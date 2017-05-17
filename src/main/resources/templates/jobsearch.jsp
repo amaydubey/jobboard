@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <head>
 
 <meta charset="utf-8">
@@ -89,6 +91,9 @@
 
 			<button type="submit" class="btn btn-primary">Search</button>
 		</form>
+		<div>
+		<p th:text="'Hello, ' + ${name} + '!'" />
+		</div>
 
 		<div id="team" class="container-fluid text-center">
 			<h1>Team:</h1>
